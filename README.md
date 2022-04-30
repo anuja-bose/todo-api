@@ -24,7 +24,8 @@
 
 a) Using one of the 4 routes you should add 5 todo items to the above json file to_do_list array with a success response on you API.
 b) Using  one of the 4 routes you retrieve all todo items from the above json with status 201.
-
+    As per the standards 201 is used when record is created successfully, and 3b is just retriving the data. so did not use it as mentioned in 3b
+    
 
 c) Using  one of the 4 routes you should remove 3rd position todo items in the above json with status 204.
 d) Using  one of the 4 routes you should update 2nd position todo items name with “new text” in the above json with status 204.
