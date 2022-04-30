@@ -1,0 +1,27 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "API for the TODO APP",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuja-bose/todo-api.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "Anuja Bose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuja-bose/todo-api/issues"
+  },
+  "homepage": "https://github.com/anuja-bose/todo-api#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "fs": "^0.0.1-security"
+  }
+}
