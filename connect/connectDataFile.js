@@ -23,6 +23,20 @@ const initilizeDataFile = () => {
 }
 
 
+const getToDoListFromFile = () =>{
+    let data = [];
+    try {
+        let bufferData = fs.readFileSync('data.json')
+        let stData = bufferData.toString()
+        data = JSON.parse(stData)
+        
+      } catch (err) {
+        console.error(err);
+      }
+      return data.to_do_list;
+}
+
 module.exports = {
-    initilizeDataFile
+    initilizeDataFile,
+    getToDoListFromFile
 };
