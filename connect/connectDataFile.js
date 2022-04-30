@@ -1,12 +1,14 @@
 var fs = require('fs');
 var pjson = require('../package.json');
+var moment = require('moment');
 
 const initilizeDataFile = () => {
-
+    //18 June 2019 at 9:00 AM
+    let dateCreated = moment().format("DD MMMM YYYY") +" at " + moment().format("LT");
     let data = {
         "author": "Anuja Bose",
         "version": pjson.version,
-        "time_stamp": "",
+        "time_stamp": dateCreated,
         "to_do_list": [
             { "id": "01", "task": "Shopping", "status": "Completed" },
             { "id": "02", "task": "Cleaning", "status": "In-progress" }

@@ -1,1 +1,9 @@
-{"author":"Anuja Bose","version":"1.0.0","time_stamp":"","to_do_list":[{"id":"01","task":"Shopping","status":"Completed"},{"id":"02","task":"Cleaning","status":"In-progress"}]}
+{
+    "author": "Anuja Bose",
+    "version": "1.0.0",
+    "time_stamp": "30 April 2022 at 3:34 PM",
+    "to_do_list": [
+        { "id": "01", "task": "Shopping", "status": "Completed" },
+        { "id": "02", "task": "Cleaning", "status": "In-progress" }
+    ]
+}
