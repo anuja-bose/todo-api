@@ -11,21 +11,23 @@ const getData = (opt) => {
         console.error(err);
     }
 
-    if(opt==='data'){
-      return data
+    if (opt === "data") {
+        return data;
     }
-    if(opt==='todolist'){
-      return data.to_do_list
+    if (opt === "todolist") {
+        return data.to_do_list;
     }
 };
 
 const createTask = (body) => {
+    // Generating a id for the task
     let nid = uuidv4();
     body.id = nid;
 
-    let data = getData('data');
-
+    //Getting the data from the data.json file
+    let data = getData("data");
     let todoTaskList = data.to_do_list;
+    
     const { task, status, id } = body;
     let taskData = {
         task: task,
