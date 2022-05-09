@@ -29,14 +29,19 @@ const getTodoTask = asyncHandler(async (req, res) => {
 // @access  Public
 const updateTodoTask = asyncHandler(async (req, res) => {
     const { task, status} = req.body;
-    let id = req.params.id;
-    let newRecord = {
-        task: task,
-        status: status,
-        id: id,
-    };
-
-    let  result = await updateTask(newRecord,id);
+    let  result = {};
+    if(task!==undefined && status!== undefined){
+        let id = req.params.id;
+        let newRecord = {
+            task: task,
+            status: status,
+            id: id,
+        };
+      result = await updateTask(newRecord,id);
+    }else {
+        result.statusCode = 404;
+        result.message = { message: "Task or Status should not be blank", success: false };
+    }
     res.status(result.statusCode).json(result.message);
 });
 
