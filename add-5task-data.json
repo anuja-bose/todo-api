@@ -2,6 +2,7 @@
     "author": "Anuja Bose",
     "version": "1.0.0",
     "time_stamp": "09 May 2022 at 5:29 PM",
+    "updated_At": "09 May 2022 at 5:50 PM",
     "to_do_list": [
         {
             "task": "Jogging",
@@ -9,9 +10,14 @@
             "id": "15c034bf-ae36-485c-bd2e-37991ca37b41"
         },
         {
-            "task": "new Text",
+            "task": "Painting",
             "status": "Pending",
             "id": "c9b9dad9-6058-46c9-b77b-db0308141e31"
+        },
+        {
+            "task": "Washing Car",
+            "status": "Pending",
+            "id": "38a49c6b-9b66-4199-badc-9de672e16d56"
         },
         {
             "task": "Shopping",
