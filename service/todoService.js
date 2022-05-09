@@ -80,10 +80,10 @@ const deleteTask = async (id) => {
         todoTask = deleteRecord(todoTaskList, id);
         data.to_do_list = todoTask;
         if (saveData("data.json", data)) {
-            result.statusCode = 202;
+            result.statusCode = 204;
             result.message = {
-                message: "record deleted successfully",
-                success: true,
+             //  message: "record deleted successfully",
+             //  success: true,
             };
         } else {
             result.statusCode = 500;
