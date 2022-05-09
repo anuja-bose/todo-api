@@ -1,11 +1,11 @@
 const asyncHandler = require("express-async-handler");
-const { getData, createTask } = require("../service/todoService");
+const { getTasks,createTask,getTask,deleteTask,updateTask } = require("../service/todoService");
 
 // @desc    Get todo list
 // @route   GET /api/todo
 // @access  Public
-const getTodoList = asyncHandler(async (req, res) => {
-    const todoList = getData("todolist");
+const getTodoTasks = asyncHandler(async (req, res) => {
+    const todoList = getTasks();
     res.status(200).json(todoList);
 });
 
@@ -13,8 +13,8 @@ const getTodoList = asyncHandler(async (req, res) => {
 // @route   POST /api/todo
 // @access  Public
 const createTodoTask = asyncHandler(async (req, res) => {
-    const todoTask = createTask(req.body);
-    res.status(201).json(todoTask);
+    let  result = await createTask(req.body);
+    res.status(result.statusCode).json(result.message);
 });
 
 // @desc    Get todo Task
@@ -28,18 +28,28 @@ const getTodoTask = asyncHandler(async (req, res) => {
 // @route   PUT /api/todo/:id
 // @access  Public
 const updateTodoTask = asyncHandler(async (req, res) => {
-    res.status(202).json("update todo task");
+    const { task, status} = req.body;
+    let id = req.params.id;
+    let newRecord = {
+        task: task,
+        status: status,
+        id: id,
+    };
+
+    let  result = await updateTask(newRecord,id);
+    res.status(result.statusCode).json(result.message);
 });
 
 // @desc    Delete todo Task
 // @route   DELETE /api/todo/:id
 // @access  Public
 const deleteTodoTask = asyncHandler(async (req, res) => {
-    res.status(202).json("delete todo task");
+    let  result = await deleteTask(req.params.id);
+    res.status(result.statusCode).json(result.message);
 });
 
 module.exports = {
-    getTodoList,
+    getTodoTasks,
     createTodoTask,
     getTodoTask,
     updateTodoTask,
